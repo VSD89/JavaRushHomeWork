@@ -67,20 +67,20 @@ public class Solution {
         String[] str = strings.toArray(new String[strings.size()]);
         Integer[] nmb = numbers.toArray(new Integer[numbers.size()]);
         for (int i = 0; i < nmb.length; i++) {
-            for (int j = 0; j < nmb.length; j++) {
-                if (nmb[i]>nmb[j]){
-                    int tmp = nmb[i];
-                    nmb[i] = nmb[j];
-                    nmb[j] = tmp;
+            for (int j = i+1; j < nmb.length; j++) {
+                if (nmb[j]>nmb[i]){
+                    int tmp = nmb[j];
+                    nmb[j] = nmb[i];
+                    nmb[i] = tmp;
                 }
             }
         }
         for (int i = 0; i < str.length; i++) {
-            for (int j = 0; j < str.length; j++) {
-                if (isGreaterThan(str[j], str[i])) {
-                    String tmp = str[j];
-                    str[j] = str[i];
-                    str[i] = tmp;
+            for (int j = i+1; j < str.length; j++) {
+                if (isGreaterThan(str[i], str[j])) {
+                    String tmp = str[i];
+                    str[i] = str[j];
+                    str[j] = tmp;
                 }
             }
         }
