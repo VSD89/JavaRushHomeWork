@@ -30,10 +30,10 @@ public class Solution {
             String s = reader.readLine();
             list.add(s.toLowerCase());
         }
-        for (int i = 0; i < abcArray.length; i++) {
-            int count = 0;
-            for (String s : list) {
-                for (char element : s.toCharArray()){
+        for (int i = 0; i < abcArray.length; i++) {   //проходим по каждой букве
+            int count = 0; //счетчик для данной буквы
+            for (String s : list) {  //проходим по каждой строке из списка
+                for (char element : s.toCharArray()){  //разбиваем строку на буквы и сравниваем каждую букву с нашей
                     if (element == abcArray[i])
                         count++;
                 }
